@@ -30,11 +30,7 @@ export class HeaderComponent implements OnInit {
 
   goTo(path: string, frag: string | null): void {
     this.hideToggle();
-    if(frag){
-      this.router.navigate([path], { fragment: frag ?? "" });
-    } else {
-      this.router.navigate([path]);
-    }
+    this.router.navigate([path], { fragment: frag ?? "welcome" });
   }
 
   toggle($event: any): void {

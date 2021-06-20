@@ -1,6 +1,6 @@
 <div class="header" #header>
   <nav class="navbar">
-    <a class="logo" [routerLink]="['/home']">
+    <a class="logo" (click)="goTo('/home', '')">
       <img id="logo" src="assets/logo_full_color.svg" alt="Wolox Logo" />
     </a>
     <a (click)="toggle($event)" id="toggle-button" class="toggle-button">
