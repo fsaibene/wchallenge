@@ -1,0 +1,23 @@
+<div class="header" #header>
+  <nav class="navbar">
+    <a class="logo" [routerLink]="['/home']">
+      <img id="logo" src="assets/logo_full_color.svg" alt="Wolox Logo" />
+    </a>
+    <a (click)="toggle($event)" id="toggle-button" class="toggle-button">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </a>
+    <ul #links class="navbar-links">  
+      <li (click)="goTo('/home', '')">
+        <a>Inicio</a>
+      </li>
+      <li (click)="goTo('/home', 'benefits')">
+        <a>Beneficios</a>
+      </li>
+      <li class="btn-login" (click)="goTo('/login', '')">
+        <a>Login</a>
+      </li>
+    </ul>
+  </nav>
+</div>
