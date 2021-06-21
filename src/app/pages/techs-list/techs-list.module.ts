@@ -2,10 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { TechsListRoutingModule } from './techs-list-routing.module';
+import { TechsListComponent } from './techs-list/techs-list.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    TechsListComponent
+  ],
   imports: [
     CommonModule,
     TechsListRoutingModule

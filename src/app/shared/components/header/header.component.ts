@@ -1,13 +1,13 @@
 import { Component, ElementRef, HostListener, OnInit, ViewChild, ViewChildren } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
-  private scrollTop: number = 0;
+export class HeaderComponent {
+  private scrollTop: number = 15;
   public hideNav: boolean = false;
 
   @ViewChild("header", { static: true }) header: ElementRef | null = null;
@@ -30,7 +30,11 @@ export class HeaderComponent implements OnInit {
 
   goTo(path: string, frag: string | null): void {
     this.hideToggle();
-    this.router.navigate([path], { fragment: frag ?? "welcome" });
+    let options: any = {};
+    if(frag){
+      options.fragment = frag;
+    }
+    this.router.navigate([path], options);
   }
 
   toggle($event: any): void {
@@ -42,7 +46,7 @@ export class HeaderComponent implements OnInit {
   @HostListener('window:scroll', ['$event'])
   onWindowScroll($event: any) {
     console.log($event)
-      var currentScrollPos = window.pageYOffset;
+      let currentScrollPos = window.pageYOffset;
       if(this.header){
         if (this.scrollTop > currentScrollPos) {
           this.header.nativeElement.style.top = "0";
