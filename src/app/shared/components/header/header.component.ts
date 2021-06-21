@@ -1,5 +1,5 @@
 import { Component, ElementRef, HostListener, OnInit, ViewChild, ViewChildren } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -45,7 +45,6 @@ export class HeaderComponent {
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll($event: any) {
-    console.log($event)
       let currentScrollPos = window.pageYOffset;
       if(this.header){
         if (this.scrollTop > currentScrollPos) {

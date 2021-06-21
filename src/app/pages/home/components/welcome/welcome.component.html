@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="content">
+    <div [@enterAnimationStart] *ngIf="loaded"  class="welcome-text">
+        <h1 class="welcome-header">
+            Bienvenido a tu<br>
+            <span>Entrevista Técnica</span> 
+            en<br>
+            <span class="color-secondary">Wolox</span>
+        </h1>
+    </div>
+    <div [@enterAnimationFadeIn] *ngIf="loaded" class="office-img">
+        <img src="assets/Img Hero/Ic_ilustra_Hero.png" alt="">
+    </div>
+  </div>
+</div>

@@ -9,9 +9,16 @@
   src: url('assets/Fonts/Montserrat/Montserrat-Medium.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'Montserrat-light';
+  src: url('assets/Fonts/Montserrat/Montserrat-Light.ttf') format('truetype');
+}
+
 :root {
   --color-background: #ffffff;
   --color-active-primary: #00abe9;
+  --color-text-primary: #000000;
+  --color-secondary: #97cf00;
   --color-links: #000000;
   --color-links-hover:#00abe9;
   --color-buttons: #f9f9f9;
@@ -22,6 +29,8 @@
   --color-danger: #dc3545;
   --border: #000000;
   --border-primary: #00abe9;
+  --font-family: "Montserrat", sans-serif;
+  --font-family-light: "Montserrat-light", sans-serif;
 }
 
 html,
