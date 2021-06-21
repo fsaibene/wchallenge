@@ -1,0 +1,96 @@
+.container {
+  background: url("../../../../../assets/Backgrounds/Bg_Header.png") no-repeat bottom
+    center/cover;
+}
+.content {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.twitter {
+  display: flex;
+  top: 0; left: 0; right: 0; bottom: 0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 60%;
+  text-align: center;
+}
+.woloxer-img {
+  width: 100%;
+}
+.twitter-text {
+  color: var(--color-active-primary);
+  position: absolute;
+  font-size: 2rem;
+  font-weight: 600;
+}
+.color-primary {
+  color: var(--color-active-primary);
+  font-weight: 600;
+}
+h1 {
+  font-size: 4rem;
+}
+.twitter-logo {
+  font-size: 1.3rem;
+  font-weight: 100;
+  color: var(--color-background);
+}
+.logo {
+  margin: 1rem;
+  font-size: 2rem;
+}
+.ideas {
+  width: 40%;
+  text-align: center;
+}
+h2 {
+  font-size: 3rem;
+}
+.color-secondary {
+  color: var(--color-secondary);
+  font-weight: 600;
+}
+.follow-us {
+  font-size: 1.3rem;
+  font-weight: 100;
+  margin-top: 2rem;
+}
+.button-login {
+  color: #fff;
+  border-radius: 30px;
+  border: solid 1px var(--color-active-primary);
+  padding: 10px 50px;
+  transition: all 0.1s ease-in-out;
+}
+
+.button-login:hover {
+  background-color: var(--color-active-primary);
+  cursor: pointer;
+  box-shadow: var(--box-shadow);
+  transition: all .3s ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+  .content {
+    flex-direction: column;
+  }
+  h1 {
+      font-size: 30px;
+      margin-top: 0;
+      margin-bottom: 5px;
+  }
+  .twitter {
+      margin-bottom: 20px;
+      width: fit-content;
+  }
+  .ideas {
+    width: 100%;
+  }
+  h2 {
+    font-size: 20px;
+  }
+}

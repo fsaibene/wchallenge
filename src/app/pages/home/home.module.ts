@@ -6,8 +6,7 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
 import { WoloxersComponent } from './components/woloxers/woloxers.component';
 import { BenefitsComponent } from './components/benefits/benefits.component';
 import { CompleteComponent } from './components/complete/complete.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SharedModule } from 'src/app/shared/shared.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -15,11 +14,12 @@ import { SharedModule } from 'src/app/shared/shared.module';
     WelcomeComponent,
     WoloxersComponent,
     BenefitsComponent,
-    CompleteComponent
+    CompleteComponent,
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    FontAwesomeModule
   ]
 })
 export class HomeModule { }

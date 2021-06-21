@@ -1,1 +1,23 @@
-<p>woloxers works!</p>
+<div class="container">
+  <div class="content">
+    <div *ngIf="loaded" class="twitter">
+      <img class="woloxer-img" src="../../../../../assets/img_woloxer.png" alt="">
+      <div class="twitter-text">
+        <div class="title"></div>
+        <h1><span class="color-secondary">350 + </span>Woloxers</h1>
+        <div class="twitter-logo">
+          <fa-icon class="logo" [icon]="faTwitter"></fa-icon><span>@Wolox</span>
+        </div>
+        <div class="follow-us">
+            <a class="button-login" href="https://twitter.com/Wolox" target="_blank">Siguenos</a>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="loaded" class="ideas">
+      <h2>Trabajamos para<br>
+        <span class="color-primary">convertir </span> <span class="color-secondary">ideas</span> en <br>
+        productos.
+      </h2>
+    </div>
+  </div>
+</div>
