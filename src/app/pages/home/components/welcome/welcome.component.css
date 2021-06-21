@@ -50,4 +50,11 @@ span {
       padding: 0px 10px;
       text-align: center;
   }
+  .welcome-text {
+    padding: 20px 20px 20px 40px;
+  }
+  .welcome-header {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
 }
