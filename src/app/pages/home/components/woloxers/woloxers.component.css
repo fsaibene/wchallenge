@@ -1,6 +1,5 @@
 .container {
-  background: url("../../../../../assets/Backgrounds/Bg_Header.png") no-repeat bottom
-    center/cover;
+  background-color: #f2f5fa;
 }
 .content {
   margin-top: 40px;
