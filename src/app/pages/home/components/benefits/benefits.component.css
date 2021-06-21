@@ -1,0 +1,34 @@
+.container {
+  padding-top: 3rem;
+}
+.title {
+  text-align: center;
+  padding-bottom: 3rem;
+  font-size: 2rem;
+  width: 100%;
+}
+.color-primary {
+  color: var(--color-active-primary);
+}
+.benefits {
+  display: flex;
+  flex-direction: row;
+}
+.flex1 {
+  flex: 1;
+  text-align: center;
+  padding: 0px 30px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .content {
+      flex-direction: column;
+  }
+  .title {
+    font-size: 2rem;
+  }
+  .benefits {
+    flex-direction: column;
+  }
+}
