@@ -24,16 +24,12 @@ import { AfterViewInit, ChangeDetectorRef, Component, OnInit } from '@angular/co
       )
   ]
 })
-export class WelcomeComponent implements OnInit, AfterViewInit {
+export class WelcomeComponent implements OnInit {
   public loaded: boolean = false;
   constructor(private cd: ChangeDetectorRef) { }
-  ngAfterViewInit(): void {
+
+  ngOnInit(): void {
     this.loaded = true;
     this.cd.detectChanges();
   }
-
-  ngOnInit(): void {
-  }
-  
-
 }

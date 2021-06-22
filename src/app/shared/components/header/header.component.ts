@@ -15,9 +15,6 @@ export class HeaderComponent {
 
   constructor(private router: Router) { }
 
-  ngOnInit(): void {
-  }
-
   hideToggle(): void {
     if(this.links && this.links.nativeElement){
       this.links.nativeElement.classList.remove("active");

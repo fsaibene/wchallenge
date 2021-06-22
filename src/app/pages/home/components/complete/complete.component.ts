@@ -5,11 +5,6 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './complete.component.html',
   styleUrls: ['./complete.component.css']
 })
-export class CompleteComponent implements OnInit {
-
+export class CompleteComponent {
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }
