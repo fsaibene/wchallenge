@@ -25,7 +25,7 @@
 .office-img {
   flex: 1;
   text-align: center;
-  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
 }
 
 h1 {

@@ -15,8 +15,11 @@
       <li (click)="goTo('/home', 'benefits')">
         <a>Beneficios</a>
       </li>
-      <li class="btn-login" (click)="goTo('/login', '')">
+      <li *ngIf="!(sessionService.logged$ | async)" class="btn-login" (click)="goTo('/login', '')">
         <a>Login</a>
+      </li>
+      <li *ngIf="(sessionService.logged$ | async)" class="btn-login" (click)="logout()">
+        <a>Cerrar sesión</a>
       </li>
     </ul>
   </nav>

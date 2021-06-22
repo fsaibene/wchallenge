@@ -1,5 +1,6 @@
 import { Component, ElementRef, HostListener, OnInit, ViewChild, ViewChildren } from '@angular/core';
 import { Router } from '@angular/router';
+import { SessionService } from '../../session.service';
 
 @Component({
   selector: 'app-header',
@@ -13,7 +14,7 @@ export class HeaderComponent {
   @ViewChild("header", { static: true }) header: ElementRef | null = null;
   @ViewChild("links", { static: true }) links: ElementRef | null = null;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, public sessionService: SessionService) { }
 
   hideToggle(): void {
     if(this.links && this.links.nativeElement){
@@ -38,6 +39,10 @@ export class HeaderComponent {
     if(this.links){
       this.links.nativeElement.classList.toggle("active");
     }
+  }
+
+  logout(): void {
+    this.sessionService.logout();
   }
 
   @HostListener('window:scroll', ['$event'])

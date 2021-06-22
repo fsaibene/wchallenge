@@ -1,0 +1,26 @@
+<div *ngIf="(needValidate$ | async)">
+  <span class="error" *ngIf="control && control.errors?.required">
+      Requerido.
+  </span>
+  <span class="error" *ngIf="control && control.errors?.minlength">
+      Debe tener un minimo de {{ getMinLengthError(control)}} caracteres
+  </span>
+  <span class="error" *ngIf="control && control.errors?.maxlength">
+      Debe tener un maximo de {{getMaxLengthError(control)}} caracteres
+  </span>
+
+  <span class="error" *ngIf="control && control.errors?.min">
+      Debe tener un minimo de {{getMinError(control)}}
+  </span>
+  <span class="error" *ngIf="control && control.errors?.max">
+      Debe tener un máximo de {{getMaxError(control)}}
+  </span>
+
+  <span class="error" *ngIf="control && control.errors?.email">
+    Email inválido.
+  </span>
+
+  <span class="error" *ngIf="customError">
+  {{customError}}
+  </span> 
+</div>
