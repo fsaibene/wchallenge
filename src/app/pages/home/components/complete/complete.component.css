@@ -1,3 +1,9 @@
+.container {
+  background: url("../../../../../assets/Backgrounds/Bg_Footer.png") no-repeat bottom
+    center/cover;
+    padding-bottom: 5rem;
+}
+
 .content {
   display: flex;
   align-items: center;
