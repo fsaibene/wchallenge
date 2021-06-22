@@ -38,3 +38,19 @@ h2 {
   background: var(--color-background);
   color: var(--color-text-primary);
 }
+
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding-bottom: 0;
+  }
+  .content {
+    margin-bottom: 1rem;
+  }
+  h1 {
+    font-size: 1.6rem;
+  }
+  h2 {
+    font-size: 1.4rem;
+  }
+}
