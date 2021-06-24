@@ -82,29 +82,7 @@
   border-radius: 10px;
 }
 
-.btn-login {
-  border: 1px solid var(--color-active-primary);
-  border-radius: 30px;
-  background: var(--color-background);
-  padding: 10px 50px;
-  transition: all .3s ease-in-out;
-}
-
-.btn-login a {
-  color: var(--color-active-primary) !important;
-}
-
-.btn-login:hover a {
-  color: var(--color-background) !important;
-  border: none !important ;
-}
-
-.btn-login:hover {
-  background-color: var(--color-active-primary) !important;
-  transition: all .1s ease-in-out;
-}
-
-@media(max-width: 500px) {
+@media(max-width: 768px) {
   .toggle-button {
     display: flex;
   }
@@ -133,13 +111,6 @@
     align-items: flex-start;
     border-bottom: solid 1px var(--border);
     background-color: var(--color-background);
-  }
-
-  .btn-login {
-    color: var(--color-active-primary);
-    border: none;
-    border-radius: 30px;
-    padding: 0;
   }
 }
 

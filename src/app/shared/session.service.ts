@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
@@ -7,7 +7,10 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class SessionService {
   private logged: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   public logged$: Observable<boolean> = this.logged.asObservable();
-  constructor() { }
+  constructor() { 
+    let token = localStorage.getItem('user');
+    this.logged.next(token != null && token != "");
+  }
 
   setUser(token: string): void {
     if(token){

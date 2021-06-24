@@ -1,59 +1,72 @@
 <div class="container">
   <div class="content">
     <h1>Registro</h1>
-    <form [formGroup]="fg" (ngSubmit)="onSubmit(fg)">
-      <div class="form-control">
-        <div><label>Nombre</label> <br>
-          <input formControlName="firstName" type="text" placeholder="Ingrese nombre"/></div>
-        <app-error [needValidate$]="needValidate$" [control]="fg.controls['firstName']" ></app-error>
+    <div class="form-container">
+      <form [formGroup]="fg" (ngSubmit)="onSubmit(fg)" class="form-group">
+        <div class="form-control">
+            <label>Nombre</label> <br>
+            <input class="form-control-input" formControlName="firstName" type="text" placeholder="Ingrese nombre"/>
+          <app-error [needValidate$]="needValidate$" [control]="fg.controls['firstName']" ></app-error>
+        </div>
+          <div class="form-control">
+            <label>Apellido</label> <br>
+            <input class="form-control-input" formControlName="lastName"  type="text" placeholder="Ingrese apellido"/>
+            <app-error [needValidate$]="needValidate$" [control]="fg.controls['lastName']" ></app-error>
+          </div>
+        <div class="form-control">
+          <div>
+            <label>Teléfono</label> <br>
+            <input class="form-control-input" type="number" formControlName="phone"  placeholder="Teléfono"/>
+            <app-error [needValidate$]="needValidate$" [control]="fg.controls['phone']" ></app-error>
+          </div>
+        </div>
+        <div>
+          <div class="form-control">
+            <label>País</label><br>
+            <select class="form-select" formControlName="country" (change)="onChangeCountry($event)">
+              <option *ngFor="let country of countries" value="{{country.name}}">{{country.name}}</option>
+            </select>
+            <app-error [needValidate$]="needValidate$" [control]="fg.controls['country']" ></app-error>
+          </div>
 
-        <div><label>Apellido</label> <br>
-          <input formControlName="lastName"  type="text" placeholder="Ingrese apellido"/></div>
-        <app-error [needValidate$]="needValidate$" [control]="fg.controls['lastName']" ></app-error>
-      </div>
-      <div class="form-control">
-        <div>
-          <label>Teléfono</label> <br>
-          <input type="number" formControlName="phone"  placeholder="Teléfono"/>
-          <app-error [needValidate$]="needValidate$" [control]="fg.controls['phone']" ></app-error>
+          <div class="form-control">
+            <label>Provincia</label><br>
+            <select class="form-select" formControlName="province">
+              <option  *ngFor="let province of getProvinces()" value="province">{{province}}</option>
+            </select>
+            <app-error [needValidate$]="needValidate$" [control]="fg.controls['province']" ></app-error>
+          </div>
         </div>
-      </div>
-      <div class="form-control">
-        <div>
-          <label>País</label><br>
-          <select class="form-select" formControlName="country" (change)="onChangeCountry($event)">
-            <option *ngFor="let country of countries" value="{{country.name}}">{{country.name}}</option>
-          </select>
-          <app-error [needValidate$]="needValidate$" [control]="fg.controls['country']" ></app-error>
+        <div class="form-control">
+          <label>Email</label><br>
+          <input class="form-control-input" formControlName="email" id="inputEmailAddress" type="email" aria-describedby="emailHelp" placeholder="Correo electrónico"/>
+          <app-error [needValidate$]="needValidate$" [control]="fg.controls['email']" ></app-error>
         </div>
+        <div class="form-control">
+          <div>
+            <label for="inputPassword">Contraseña</label><br>
+            <input class="form-control-input" formControlName="password" id="inputPassword" type="password" placeholder="Contraseña"/>
+            <app-error [needValidate$]="needValidate$" [control]="fg.controls['password']" ></app-error>
+            <div *ngIf="fg.controls['password'].hasError('notComplex')">
+              <app-error [needValidate$]="needValidate$" [customError]="'La contraseña debe ser alfanumérica'" ></app-error>
+            </div>
+          </div>
+        </div>
+        <div class="form-control">
+          <div>
+            <label for="inputConfirmPassword">Repita Contraseña</label><br>
+            <input class="form-control-input"  formControlName="confirmPassword" id="inputConfirmPassword" type="password"  placeholder="Repita contraseña"/>
+            <app-error [needValidate$]="needValidate$" [control]="fg.controls['confirmPassword']" ></app-error>
 
-        <div>
-          <label>Provincia</label><br>
-          <select class="form-select" formControlName="province">
-            <option  *ngFor="let province of getProvinces()" value="province">{{province}}</option>
-          </select>
-          <app-error [needValidate$]="needValidate$" [control]="fg.controls['province']" ></app-error>
+          </div>
         </div>
-      </div>
-      <div class="form-control">
-        <label>Email</label><br>
-        <input formControlName="email" id="inputEmailAddress" type="email" aria-describedby="emailHelp" placeholder="Correo electrónico"/>
-        <app-error [needValidate$]="needValidate$" [control]="fg.controls['email']" ></app-error>
-      </div>
-      <div class="form-control">
-        <div>
-          <label for="inputPassword">Contraseña</label><br>
-          <input formControlName="password" id="inputPassword" type="password" placeholder="Contraseña"/>
-          <app-error [needValidate$]="needValidate$" [control]="fg.controls['password']" ></app-error>
+        <div *ngIf="fg.hasError('notSame')">
+          <app-error [needValidate$]="needValidate$" [customError]="'Las contraseñas no coinciden'" ></app-error>
         </div>
-        <div>
-          <label for="inputConfirmPassword">Repita Contraseña</label><br>
-          <input id="inputConfirmPassword" type="password" placeholder="Repita contraseña"/>
+        <div class="button-container">
+          <button class="btn-primary" [disabled]="disableButton" type="submit">Registrarse</button>
         </div>
-      </div>
-      <div>
-        <button [disabled]="disableButton" type="submit">Registrarse</button>
-      </div>
-    </form>
+      </form>
+    </div>
   </div>
 </div>

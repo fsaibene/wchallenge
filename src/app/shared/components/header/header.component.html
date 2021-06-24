@@ -15,10 +15,10 @@
       <li (click)="goTo('/home', 'benefits')">
         <a>Beneficios</a>
       </li>
-      <li *ngIf="!(sessionService.logged$ | async)" class="btn-login" (click)="goTo('/login', '')">
+      <li *ngIf="!(sessionService.logged$ | async)" class="btn-primary" (click)="goTo('/login', '')">
         <a>Login</a>
       </li>
-      <li *ngIf="(sessionService.logged$ | async)" class="btn-login" (click)="logout()">
+      <li *ngIf="(sessionService.logged$ | async)" class="btn-primary" (click)="logout()">
         <a>Cerrar sesión</a>
       </li>
     </ul>
