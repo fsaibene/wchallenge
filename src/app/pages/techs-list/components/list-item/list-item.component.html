@@ -1,0 +1,32 @@
+<div class="container" *ngIf="tech">
+  <div class="content">
+    <div class="logo-container">
+      <img class="logo" src="{{tech.logo}}" alt="" onerror="this.src='assets/notfound.png';">
+    </div>
+    <div class="description">
+      <span class="title">
+        {{tech.tech}}
+      </span>
+      <span class="language">
+        Escrito en: {{tech.language}}
+      </span>
+    </div>
+    <div class="info">
+      <div class="save" >
+        <div *ngIf="!tech.favourite" (click)="save()">
+          <fa-icon [icon]="['far', 'bookmark']"></fa-icon>
+        </div>
+        <div *ngIf="tech.favourite" (click)="unSave()">
+          <fa-icon [icon]="['fas', 'bookmark']"></fa-icon>
+        </div>
+      </div>
+      <span class="type">
+        {{tech.type}}
+      </span>
+      <span class="author">
+        Creado por {{tech.author}} en {{tech.year}}
+      </span>
+    </div>
+    
+  </div>
+</div>

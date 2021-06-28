@@ -1,5 +1,7 @@
-import { Component, ElementRef, HostListener, OnInit, ViewChild, ViewChildren } from '@angular/core';
+import { Component, ElementRef, HostListener, Input, OnDestroy, OnInit, ViewChild, ViewChildren } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { SavedService } from '../../services/saved.service';
 import { SessionService } from '../../session.service';
 
 @Component({
@@ -7,14 +9,29 @@ import { SessionService } from '../../session.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent {
-  private scrollTop: number = 15;
+export class HeaderComponent implements OnInit, OnDestroy{
+  private scrollTop: number = 0;
+  private savedSub: Subscription | null = null;
   public hideNav: boolean = false;
+  public savedTechs: Array<string> = new Array<string>();
 
   @ViewChild("header", { static: true }) header: ElementRef | null = null;
   @ViewChild("links", { static: true }) links: ElementRef | null = null;
 
-  constructor(private router: Router, public sessionService: SessionService) { }
+  constructor(private router: Router, public sessionService: SessionService, private savedService: SavedService) { 
+  }
+  
+  ngOnInit(): void {
+    this.savedSub = this.savedService.savedTechs$.subscribe(list => {
+      this.savedTechs = list;
+    })
+  }
+
+  ngOnDestroy(): void {
+    if(this.savedSub) {
+      this.savedSub.unsubscribe();
+    }
+  }
 
   hideToggle(): void {
     if(this.links && this.links.nativeElement){
@@ -43,6 +60,7 @@ export class HeaderComponent {
 
   logout(): void {
     this.sessionService.logout();
+    this.router.navigateByUrl("/home")
   }
 
   @HostListener('window:scroll', ['$event'])

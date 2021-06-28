@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LoggedGuard } from './pages/login/guards/logged.guard';
 
 const routes: Routes = [
   {
     path: 'home',
     loadChildren: () =>
     import('./pages/home/home.module').then((m) => m.HomeModule),
+    canActivate: [LoggedGuard]
   },
   {
     path: 'login',

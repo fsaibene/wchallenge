@@ -1,0 +1,91 @@
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 75%;
+  height: 5rem;
+}
+
+.content {
+  border: solid var(--color-secondary) 2px;
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  border-radius: 30px;
+  padding: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  display: flex;
+  flex-direction: row;
+  transition: all 0.3s;
+}
+.content:hover {
+  box-shadow: 3px 2px 1px grey;
+}
+.logo-container {
+  width: 100px;
+  height: 100px;
+  display: flex;
+}
+.logo {
+  margin: auto;
+  width: 100%;
+}
+.description {
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.language {
+  margin-top: auto;
+  font-size: 1rem;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  max-width: 50%;
+}
+
+.type {
+  font-size: 1.8rem;
+  font-weight: 600;
+  font-family: var(--font-family-light);
+  text-align: right;
+}
+.author {
+  margin-top: auto;
+  font-size: 1rem;
+  text-align: right;
+  font-family: var(--font-family-light);
+}
+
+.save {
+  font-size: 1.4rem;
+  text-align: right;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+  }
+
+  .logo-container {
+    width: 40%;
+    height: auto;
+  }
+  .title {
+    font-size: 1rem;
+  }
+  .type, .author, .language {
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,58 @@
+.container {
+  padding-top: 10rem;
+
+  display: contents;
+}
+h1 {
+  font-size: 2.5rem;
+  color: var(--color-active-primary);
+}
+.content {
+  margin-top: 5rem;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-right: 10rem;
+  padding-left: 10rem;
+  background: url("../../../../assets/Backgrounds/Bg_Header.png") repeat bottom
+  center/cover;
+}
+
+.item-container {
+  width: 100%;
+  padding-bottom: 1.5rem;
+  padding-top: 1.5rem;
+}
+.total-count {
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+.search-container {
+  display: flex;
+  flex-direction: row;
+  width: 75%;
+  margin: auto;
+  justify-content: center;
+}
+.search-control {
+  margin-right: auto;
+  margin-left: 1rem;
+}
+.order-control {
+  margin-right: 1rem;
+  margin-left: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .content {
+    padding: 0;
+  }
+
+  .item-container {
+    width: 100%;
+    padding-bottom: .5rem;
+    padding-top: .5rem;
+  }
+}

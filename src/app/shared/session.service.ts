@@ -19,6 +19,12 @@ export class SessionService {
     localStorage.setItem('user', token);
   }
 
+  setSavedTechs(techs: string[]): void {
+    if(techs){
+      localStorage.setItem('saved', JSON.stringify(techs));
+    }
+  }
+
   getUser() {
     let token = localStorage.getItem('user');
     if (token != undefined) {

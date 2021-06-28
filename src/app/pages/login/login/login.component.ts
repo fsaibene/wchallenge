@@ -62,7 +62,7 @@ export class LoginComponent implements OnInit, OnDestroy{
         this.spinnerService.hide();
         this.disableButton = false;
         this.sessionService.setUser(response["token"])
-        this.router.navigate(["home"]);
+        this.router.navigate(["techs-list"]);
       }
     });
   }

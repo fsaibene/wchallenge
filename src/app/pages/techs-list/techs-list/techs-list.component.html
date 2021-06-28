@@ -1,1 +1,24 @@
-<p>techs-list works!</p>
+<div class="container">
+  <div class="content">
+    <h1>Tecnologias</h1>
+    <div class="search-container">
+      <div class="search-control">
+          <label>Búsqueda</label> <br>
+          <input [(ngModel)]="filter" type="text" (ngModelChange)="onSearch()" />
+      </div>
+      <div class="order-control">
+        <label>Orden</label><br>
+        <select [(ngModel)]="order" class="form-select" (ngModelChange)="onOrder()">
+          <option value="asc">Ascendente</option>
+          <option value="desc">Descendente</option>
+        </select>
+      </div>
+    </div>
+    <div class="item-container" *ngFor="let tech of displayedTechs"> 
+      <app-list-item [tech]="tech" (techSaved)="onSaveTech($event)" (techUnsaved)="onUnsaveTech($event)"></app-list-item>
+    </div>
+    <span class="total-count">
+      Hay un total de {{techs.length}} tecnologias.
+    </span>
+  </div>
+</div>

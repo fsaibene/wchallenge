@@ -12,11 +12,14 @@
       <li (click)="goTo('/home', '')">
         <a>Inicio</a>
       </li>
-      <li (click)="goTo('/home', 'benefits')">
+      <li *ngIf="!(sessionService.logged$ | async)" (click)="goTo('/home', 'benefits')">
         <a>Beneficios</a>
       </li>
       <li *ngIf="!(sessionService.logged$ | async)" class="btn-primary" (click)="goTo('/login', '')">
         <a>Login</a>
+      </li>
+      <li *ngIf="(sessionService.logged$ | async) && savedTechs.length > 0" class="saved-count">
+        <a>Tiene {{savedTechs.length}} favoritos</a>
       </li>
       <li *ngIf="(sessionService.logged$ | async)" class="btn-primary" (click)="logout()">
         <a>Cerrar sesión</a>
